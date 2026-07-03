@@ -60,7 +60,7 @@ medifind/
 │   ├── userModel.js
 │   ├── pharmacyModel.js
 │   ├── medicineModel.js
-│   ├── stockModel.js
+│   └── stockModel.js
 │
 ├── routes/
 │   ├── authRoutes.js
@@ -71,6 +71,7 @@ medifind/
 │   └── adminRoutes.js
 │
 ├── app.js
+├── server.js
 └── package.json
 ```
 
