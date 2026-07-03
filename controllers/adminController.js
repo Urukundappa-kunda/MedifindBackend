@@ -259,6 +259,23 @@ const rejectPharmacy = async (req, res, next) => {
   }
 };
 
+const getAllPharmacies = async( req, res,  next) =>{
+  try{
+
+    const {status} = req.query
+
+    const filter = status? {status} : {};
+
+    const pharmacies = await Pharmacy.find(filter).populate('owner', 'name email')
+    res.status(200).json({
+      success: true,
+      data: pharmacies
+    })
+  }catch(error){
+    next(error)
+  }
+}
+
 module.exports = {
   searchUsers,
   getAllUsers,
@@ -268,4 +285,5 @@ module.exports = {
   deleteUser,
   approvePharmacy,
   rejectPharmacy,
+  getAllPharmacies
 };

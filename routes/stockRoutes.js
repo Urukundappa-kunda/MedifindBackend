@@ -14,11 +14,11 @@ const authHandler = require("../middlewares/auth");
 
 const isApproved = require("../middlewares/isApproved")
 
-router.post('/stock', authHandler, isShopOwner, isApproved, addStock)
+router.post('/', authHandler, isShopOwner, isApproved, addStock)
 
-router.put('/stock/:id', authHandler, isShopOwner,isApproved,  updateStock)
+router.put('/:id', authHandler, isShopOwner,isApproved,  updateStock)
 
-router.get('/stock/me', authHandler, isShopOwner,isApproved, getMyStock)
+router.get('/my', authHandler, isShopOwner,isApproved, getMyStock)
 
 module.exports = router 
 
