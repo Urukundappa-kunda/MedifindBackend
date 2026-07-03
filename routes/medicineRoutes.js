@@ -11,9 +11,9 @@ const {
 const isShopOwner = require("../middlewares/isShopOwner");
 const authHandler = require("../middlewares/auth");
 
-router.get("/medicines",getAllMedicine)
-router.get("/medicines/:id",getMedicineById)
-router.post("/medicines", authHandler, isShopOwner, addMedicine)
+router.get("/",getAllMedicine)
+router.get("/:id",getMedicineById)
+router.post("/", authHandler, isShopOwner, addMedicine)
 
 
 

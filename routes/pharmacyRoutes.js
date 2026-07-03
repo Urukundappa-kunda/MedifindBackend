@@ -12,8 +12,8 @@ const isShopOwner = require("../middlewares/isShopOwner")
 
 const authHandler = require('../middlewares/auth')
 
-router.post("/pharmacy", authHandler, isShopOwner, register)
-router.get("/pharmacy/me",authHandler, isShopOwner, getMyPharmacy)
-router.put("/pharmacy/me", authHandler, isShopOwner, updatePharmacy)
+router.post("/", authHandler, isShopOwner, register)
+router.get("/me",authHandler, isShopOwner, getMyPharmacy)
+router.put("/me", authHandler, isShopOwner, updatePharmacy)
 
 module.exports = router

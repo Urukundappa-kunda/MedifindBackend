@@ -4,8 +4,8 @@ const router = express.Router()
 
 const {getAllMedicine, getMedicineBySearch, searchMedicines} = require('../controllers/searchController')
 
-router.get("/search/all", getAllMedicine)
-router.get("/search/medicine", searchMedicines)
-router.get("/search",getMedicineBySearch)
+router.get("/all", getAllMedicine)
+router.get("/medicine", searchMedicines)
+router.get("/",getMedicineBySearch)
 
 module.exports = router
