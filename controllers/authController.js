@@ -7,12 +7,16 @@ const bcrypt = require("bcryptjs");
 
 const register = async (req, res, next) => {
   try {
-    const {name, email, password} =  req.body
+    const {name, email, password, role} =  req.body
+
+    const allowedRoles = ["user" , "shopOwner"]
+    const assignedRoles = allowedRoles.includes(role) ? role : 'user';
 
     const user = await User.create({
       name,
       email,
-      password
+      password,
+      role: assignedRoles
     })
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
