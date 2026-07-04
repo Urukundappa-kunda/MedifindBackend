@@ -217,7 +217,8 @@ role (user | admin | shopOwner), timestamps
 ### Pharmacy
 ```
 name, address, phone, openingHours,
-location: { type: 'Point', coordinates: [lng, lat] },  ← GeoJSON format
+location: { type: 'Point', coordinates: [lng, lat] },  ← GeoJSON format,
+lincenseno,
 owner (ref: User),
 status (pending | approved | rejected),
 rejectionReason,
